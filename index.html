@@ -1,436 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Morocco Trip — Oct 17–24, 2026</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Our Morocco trip itinerary — Oct 17–24, 2026">
+<title>Our Morocco Trip — Oct 17–24, 2026</title>
 <style>
-  :root {
-    --sand: #F5F1E8;
-    --sand-deep: #E9E1D0;
-    --ink: #2B241C;
-    --ink-soft: #6B6152;
-    --majorelle: #3B4CA8;
-    --majorelle-deep: #2C3A85;
-    --ochre: #C08A2E;
-    --line: #D9D0BC;
-    --card: #FFFFFF;
-  }
-
-  * { box-sizing: border-box; }
-
-  html { -webkit-text-size-adjust: 100%; }
-
-  body {
-    margin: 0;
-    background: var(--sand);
-    color: var(--ink);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    line-height: 1.5;
-  }
-
-  .display {
-    font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif;
-  }
-
-  header.hero {
-    background: var(--majorelle);
-    color: var(--sand);
-    padding: 44px 22px 34px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  header.hero::after {
-    content: "";
-    position: absolute;
-    right: -60px;
-    top: -60px;
-    width: 220px;
-    height: 220px;
-    border: 1px solid rgba(245,241,232,0.18);
-    border-radius: 50%;
-  }
-
-  header.hero::before {
-    content: "";
-    position: absolute;
-    right: -10px;
-    bottom: -90px;
-    width: 160px;
-    height: 160px;
-    border: 1px solid rgba(245,241,232,0.14);
-    border-radius: 50%;
-  }
-
-  .hero-inner { position: relative; z-index: 1; max-width: 620px; margin: 0 auto; }
-
-  .eyebrow-route {
-    font-size: 0.95rem;
-    color: rgba(245,241,232,0.85);
-    margin: 0 0 6px;
-    letter-spacing: 0.01em;
-  }
-
-  h1.trip-title {
-    font-size: 2.1rem;
-    margin: 0 0 10px;
-    line-height: 1.15;
-    font-weight: 500;
-  }
-
-  .hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px 18px;
-    font-size: 0.92rem;
-    color: rgba(245,241,232,0.9);
-    margin-top: 14px;
-  }
-
-  .hero-meta span { white-space: nowrap; }
-
-  main {
-    max-width: 620px;
-    margin: 0 auto;
-    padding: 30px 18px 60px;
-  }
-
-  section.decisions {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-left: 4px solid var(--ochre);
-    border-radius: 4px;
-    padding: 18px 20px;
-    margin-bottom: 34px;
-  }
-
-  section.decisions h2 {
-    margin: 0 0 10px;
-    font-size: 1.05rem;
-    color: var(--ink);
-  }
-
-  section.decisions ul {
-    margin: 0;
-    padding-left: 18px;
-  }
-
-  section.decisions li {
-    margin-bottom: 8px;
-    font-size: 0.94rem;
-    color: var(--ink-soft);
-  }
-
-  section.decisions li:last-child { margin-bottom: 0; }
-
-  section.decisions strong { color: var(--ink); }
-
-  .day-block {
-    margin-bottom: 30px;
-    position: relative;
-    padding-left: 26px;
-    border-left: 2px solid var(--line);
-  }
-
-  .day-block:last-of-type { border-left: 2px solid transparent; }
-
-  .day-block::before {
-    content: "";
-    position: absolute;
-    left: -6px;
-    top: 4px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--majorelle);
-  }
-
-  .day-label {
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--majorelle);
-    font-weight: 600;
-    margin-bottom: 8px;
-  }
-
-  .stop {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: 13px 15px;
-    margin-bottom: 10px;
-  }
-
-  .stop:last-child { margin-bottom: 0; }
-
-  .stop-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-    margin-bottom: 4px;
-  }
-
-  .stop-name {
-    font-size: 1.02rem;
-    font-weight: 600;
-    color: var(--ink);
-  }
-
-  .stop-time {
-    font-size: 0.82rem;
-    color: var(--ink-soft);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .stop-blurb {
-    font-size: 0.9rem;
-    color: var(--ink-soft);
-    margin: 0;
-  }
-
-  .flag {
-    display: inline-block;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--ochre);
-    border: 1px solid var(--ochre);
-    border-radius: 3px;
-    padding: 1px 6px;
-    margin-bottom: 6px;
-  }
-
-  section.reference {
-    margin-top: 40px;
-    border-top: 1px solid var(--line);
-    padding-top: 26px;
-  }
-
-  section.reference h2 {
-    font-size: 1.1rem;
-    margin: 0 0 14px;
-  }
-
-  table.ref-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-  }
-
-  table.ref-table th {
-    text-align: left;
-    font-size: 0.72rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-    border-bottom: 1px solid var(--line);
-    padding: 0 8px 8px 0;
-  }
-
-  table.ref-table td {
-    padding: 9px 8px 9px 0;
-    border-bottom: 1px solid var(--sand-deep);
-    color: var(--ink);
-    vertical-align: top;
-  }
-
-  .budget-total {
-    margin-top: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 12px 15px;
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-  }
-
-  .budget-total .label { font-size: 0.9rem; color: var(--ink-soft); }
-  .budget-total .amount { font-size: 1.25rem; font-weight: 600; color: var(--ink); }
-  .budget-note { font-size: 0.8rem; color: var(--ink-soft); margin-top: 8px; }
-
-  footer {
-    text-align: center;
-    font-size: 0.78rem;
-    color: var(--ink-soft);
-    padding: 20px 18px 34px;
-  }
-
-  @media (max-width: 400px) {
-    h1.trip-title { font-size: 1.75rem; }
-    .stop-top { flex-direction: column; gap: 2px; }
-  }
+:root{--bg:#f5f1eb;--card:#fff;--ink:#20262d;--muted:#69737d;--line:#e7ded5;--accent:#7a4f2c;--soft:#f0e4d8;--green:#2f7251;--green-soft:#e9f5ee;--amber:#996515;--amber-soft:#fff5dc;--red:#9d3d36;--red-soft:#faeae8;--shadow:0 8px 28px rgba(64,44,28,.08);--radius:18px}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.45}
+a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:auto;padding:20px}
+header{background:linear-gradient(135deg,#fff 0%,#f4e8dc 100%);border-bottom:1px solid var(--line)}
+.hero{padding:34px 20px 26px}.kicker{text-transform:uppercase;letter-spacing:.1em;font-size:.78rem;font-weight:800;color:var(--muted)}
+h1{margin:.25rem 0 .5rem;font-size:clamp(2rem,5vw,3.4rem);line-height:1.04}.hero p{margin:.25rem 0;color:var(--muted);font-size:1.02rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}.chip{background:var(--soft);color:var(--accent);font-size:.84rem;font-weight:750;padding:7px 10px;border-radius:999px}
+nav{position:sticky;top:0;z-index:20;background:rgba(245,241,235,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:8px;overflow:auto;padding-top:9px;padding-bottom:9px}nav a{white-space:nowrap;color:var(--ink);padding:7px 10px;border-radius:10px;font-size:.9rem}nav a:hover{background:#fff;text-decoration:none}
+section{margin:30px 0 40px}.section-title{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:12px}h2{font-size:1.35rem;margin:0}.hint{font-size:.88rem;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}.card{grid-column:span 12;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.pad{padding:17px}
+details summary{list-style:none;cursor:pointer}details summary::-webkit-details-marker{display:none}.day summary,.accordion summary{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 17px;font-weight:800}.day[open] summary,.accordion[open] summary{border-bottom:1px solid var(--line)}
+.summary-main{display:flex;align-items:center;gap:12px;min-width:0}.date{min-width:62px;text-align:center;background:var(--soft);color:var(--accent);border-radius:12px;padding:6px 8px;font-size:.76rem;line-height:1.05}.date b{display:block;font-size:1.05rem}.chev{color:var(--muted);transition:.18s}details[open] .chev{transform:rotate(180deg)}
+.body{padding:8px 17px 17px}.timeline{display:grid}.event{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line)}.event:last-child{border-bottom:none}.time{font-weight:800;color:var(--accent)}.event h3{font-size:1rem;margin:0 0 3px}.meta{color:var(--muted);font-size:.9rem}
+.tags{margin-top:6px}.tag{display:inline-block;margin:3px 5px 0 0;padding:3px 7px;border-radius:999px;font-size:.75rem;font-weight:750;background:#f0f2f4;color:#52606a}.tag.ok{background:var(--green-soft);color:var(--green)}.tag.tbd{background:var(--amber-soft);color:var(--amber)}.tag.alert{background:var(--red-soft);color:var(--red)}
+.note{margin-top:11px;padding:11px 13px;border-radius:11px;background:var(--amber-soft);border-left:4px solid var(--amber);font-size:.92rem}.note.good{background:var(--green-soft);border-left-color:var(--green)}
+.links{display:flex;flex-wrap:wrap;gap:7px;margin-top:9px}.btn{display:inline-flex;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#fff;font-size:.86rem;font-weight:720}.btn:hover{background:#fbf8f5;text-decoration:none}
+.subdetails{margin-top:12px;border:1px solid var(--line);border-radius:13px;background:#fcfaf7;overflow:hidden}.subdetails summary{padding:11px 13px;font-weight:760;display:flex;justify-content:space-between;align-items:center}.subdetails[open] summary{border-bottom:1px solid var(--line)}.subbody{padding:11px 13px}.kv{display:grid;grid-template-columns:140px 1fr;gap:7px 12px;font-size:.9rem}.kv .k{color:var(--muted);font-weight:650}
+.route{margin:10px 0 0;padding:0;list-style:none;counter-reset:step}.route li{position:relative;padding:0 0 17px 36px}.route li:before{counter-increment:step;content:counter(step);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font-size:.75rem;font-weight:800}.route li:not(:last-child):after{content:"";position:absolute;left:11px;top:25px;bottom:2px;width:2px;background:var(--line)}.route b{display:block}.walk{font-size:.82rem;color:var(--muted)}
+.baggage-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}.bag-card{border:1px solid var(--line);border-radius:14px;padding:14px;background:#fff}.bag-card h3{margin:0 0 5px;font-size:1rem}.bag-row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px dashed var(--line);font-size:.88rem}.bag-row:first-of-type{border-top:none}.bag-row span:first-child{color:var(--muted)}.bag-row b{text-align:right}
+.todo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.todo .mini,.food{border:1px solid var(--line);border-radius:14px;background:#fff;padding:14px}.mini h3,.food h3{margin:0 0 5px;font-size:1rem}.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}.statusline{font-size:.84rem;color:var(--muted);margin-top:6px}
+@media(min-width:760px){.half{grid-column:span 6}.third{grid-column:span 4}}@media(max-width:650px){.wrap{padding:15px}.hero{padding:26px 15px 20px}.event{grid-template-columns:1fr}.time{margin-bottom:-6px}.kv{grid-template-columns:1fr}.k{margin-bottom:-3px}}
 </style>
 </head>
 <body>
+<header><div class="wrap hero"><div class="kicker">Our shared itinerary</div><h1>Morocco Trip</h1><p>Oct 17–24, 2026 · New York → Marrakech → Fes → Chefchaouen → Tangier → New York</p><div class="chips"><span class="chip">5 of us</span><span class="chip">8 days</span><span class="chip">Marrakech · Fes · Tangier</span><span class="chip">Updated Oct 16</span></div></div></header>
+<nav><div class="wrap"><a href="#itinerary">Itinerary</a><a href="#baggage">Baggage</a><a href="#todo">To‑do</a><a href="#food">Food ideas</a><a href="#notes">Quick notes</a></div></nav>
 
-<header class="hero">
-  <div class="hero-inner">
-    <p class="eyebrow-route">Marrakech → Fes → Tangier</p>
-    <h1 class="trip-title display">Morocco, Oct 17–24, 2026</h1>
-    <div class="hero-meta">
-      <span>8 days</span>
-      <span>5 travelers</span>
-      <span>3 cities</span>
-    </div>
-  </div>
-</header>
+<main class="wrap">
+<section id="itinerary">
+<div class="section-title"><div><h2>Our day-by-day plan</h2><div class="hint">Tap a day or accommodation block to expand the details.</div></div></div>
+<div class="grid">
 
-<main>
+<details class="card day">
+<summary><div class="summary-main"><span class="date"><b>17</b>Sat</span><span>New York → Casablanca → Marrakech</span></div><span class="chev">⌄</span></summary>
+<div class="body">
+<div class="timeline">
+<div class="event"><div class="time">10:50 AM</div><div><h3>Royal Air Maroc AT 203 — JFK → Casablanca</h3><div class="meta">JFK Terminal 1 → CMN Terminal 2 · 7h 05m · Boeing 787‑8 · Economy Eco Essential</div><div class="tags"><span class="tag ok">Online check-in completed for eligible travelers</span><span class="tag">B2Z8MO</span></div></div></div>
+<div class="event"><div class="time">9:55 PM</div><div><h3>Arrive Casablanca</h3><div class="meta">We have a 1-hour connection and change from Terminal 2 to Terminal 1.</div></div></div>
+<div class="event"><div class="time">10:55 PM</div><div><h3>Royal Air Maroc AT 417 — Casablanca → Marrakech</h3><div class="meta">Operated by RAM Express · ATR 72 · arrive Marrakech Terminal 1 at 12:00 AM on Oct 18</div></div></div>
+</div>
+<div class="note"><b>Ammi:</b> online check-in is not available for her, so we will check her in with an agent at the airport counter. Wheelchair assistance has been requested.</div>
 
-  <section class="decisions">
-    <h2>Still deciding</h2>
-    <ul>
-      <li><strong>Marrakech, Oct 19–20:</strong> now open thanks to the flight change — Atlas Mountains day trip, Essaouira, hammam, or more medina time</li>
-      <li><strong>Chefchaouen stop, Oct 23:</strong> comparing a GetYourGuide transfer against an option through the Fes host</li>
-      <li><strong>Dar Othmane guest count:</strong> booking currently shows 1 guest for a group of 5 — worth confirming with the host before check-in</li>
-    </ul>
-  </section>
+<details class="subdetails">
+<summary><span>🏠 Marrakech accommodation & check-in</span><span>⌄</span></summary>
+<div class="subbody"><div class="kv">
+<div class="k">Property</div><div>Riad Dar Yamina Exclusif — 4 min from Jemaa el‑Fnaa</div>
+<div class="k">Address</div><div>21 Derb Jemaa, Quartier Qanariya, Marrakesh, Marrakesh‑Safi 40000, Morocco</div>
+<div class="k">Check-in</div><div>Oct 17 from 3:00 PM</div>
+<div class="k">Checkout</div><div>Oct 21 by 12:00 PM</div>
+<div class="k">Guests</div><div>5</div>
+<div class="k">Host</div><div>Fahd · co-hosts Ismael and Ismahane</div>
+<div class="k">Check-in method</div><div>Host greets us</div>
+<div class="k">Confirmation</div><div>HM2MPDP92D</div>
+<div class="k">House rule</div><div>Quiet hours 10:00 PM–9:00 AM</div>
+</div><div class="note">Our saved Airbnb details say to contact the host for the exact check-in instructions. Because we arrive around midnight, we should confirm the late-arrival handoff before departure.</div></div>
+</details>
+</div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 17–18</div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">JFK → Casablanca</span>
-        <span class="stop-time">10:50 AM</span>
-      </div>
-      <p class="stop-blurb">Royal Air Maroc 203 · 1h connection in Casablanca</p>
-    </div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Casablanca → Marrakech</span>
-        <span class="stop-time">10:55 PM</span>
-      </div>
-      <p class="stop-blurb">Royal Air Maroc 417 · lands ~midnight, riad check-in same night</p>
-    </div>
-  </div>
+<details class="card day" open>
+<summary><div class="summary-main"><span class="date"><b>18</b>Sun</span><span>Marrakech — self-guided Medina walk + optional Majorelle</span></div><span class="chev">⌄</span></summary>
+<div class="body">
+<div class="note good"><b>Route:</b> we follow the order from our Google Maps plan: Airbnb → Jemaa el‑Fnaa → Dar El Bacha → Souk → Madrasa Ben Youssef. Google Maps shows about 2 km / 27 minutes of continuous walking; we give ourselves extra transition time so we can move at Ammi’s pace.</div>
+<ol class="route">
+<li><b>10:00 AM — Leave the riad</b><span class="walk">About 5–10 min to Jemaa el‑Fnaa.</span></li>
+<li><b>10:10–10:30 — Jemaa el‑Fnaa</b><span class="walk">Quick daytime look at the square before the Medina gets busier.</span></li>
+<li><b>10:30–10:50 — Walk to Dar El Bacha</b><span class="walk">We budget ~20 min rather than rushing.</span></li>
+<li><b>10:50–11:40 — Dar El Bacha / Museum of Confluences</b><span class="walk">Open Sunday 10:00 AM–6:00 PM.</span><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.fnm.ma/museums/26">Official museum info</a></div></li>
+<li><b>11:40–11:55 — Walk into the souks</b></li>
+<li><b>11:55 AM–12:40 PM — Souk browsing</b><span class="walk">We keep this flexible for shops, photos and a short rest if needed.</span></li>
+<li><b>12:40–12:55 — Walk to Madrasa Ben Youssef</b></li>
+<li><b>12:55–1:45 — Madrasa Ben Youssef</b><span class="walk">Open daily 9:00 AM–7:00 PM.</span><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.medersabenyoussef.com/opening-hours">Opening hours</a></div></li>
+<li><b>1:45–2:45 — Lunch + rest nearby</b></li>
+<li><b>~3:15–4:30 — Jardin Majorelle, if we still have energy</b><span class="walk">We take a taxi from the Medina rather than add another long walk. The garden is open daily until 6:30 PM; advance timed tickets are recommended.</span><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.jardinmajorelle.com/en/thegarden/">Official Jardin Majorelle</a></div></li>
+</ol>
+</div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 18</div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Riad Dar Yamina Exclusif</span>
-        <span class="stop-time">Morning</span>
-      </div>
-      <p class="stop-blurb">4 min walk to Jemaa el-Fnaa</p>
-    </div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Medina / Jemaa el-Fnaa</span>
-        <span class="stop-time">Full day</span>
-      </div>
-      <p class="stop-blurb">Explore on foot / taxi</p>
-    </div>
-  </div>
+<details class="card day" open>
+<summary><div class="summary-main"><span class="date"><b>19</b>Mon</span><span>Marrakech — Bahia/Saadian tour + hammam</span></div><span class="chev">⌄</span></summary>
+<div class="body"><div class="timeline">
+<div class="event"><div class="time">Morning</div><div><h3>Breakfast</h3></div></div>
+<div class="event"><div class="time">10:00–2:00</div><div><h3>Bahia / Saadian tour</h3><div class="meta">Booked by Zara through TripAdvisor.</div><div class="tags"><span class="tag ok">Booked</span></div></div></div>
+<div class="event"><div class="time">After tour</div><div><h3>Lunch</h3></div></div>
+<div class="event"><div class="time">6:00 PM</div><div><h3>Massage / hammam</h3><div class="meta">Booked by Zara through TripAdvisor.</div><div class="tags"><span class="tag ok">Booked</span></div></div></div>
+<div class="event"><div class="time">Evening</div><div><h3>Dinner</h3></div></div>
+</div></div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 19–20</div>
-    <div class="stop">
-      <span class="flag">Open</span>
-      <div class="stop-top">
-        <span class="stop-name">Marrakech — unplanned days</span>
-        <span class="stop-time">Full days</span>
-      </div>
-      <p class="stop-blurb">Freed up by the flight date change — day trip or more medina time, not yet decided</p>
-    </div>
-  </div>
+<details class="card day" open>
+<summary><div class="summary-main"><span class="date"><b>20</b>Tue</span><span>Marrakech — Atlas day trip</span></div><span class="chev">⌄</span></summary>
+<div class="body"><div class="timeline">
+<div class="event"><div class="time">9:30–4:00</div><div><h3>Atlas / Valley day trip</h3><div class="meta">Booked by Zara through TripAdvisor.</div><div class="tags"><span class="tag ok">Booked</span></div></div></div>
+<div class="event"><div class="time">After trip</div><div><h3>Early dinner</h3></div></div>
+<div class="event"><div class="time">If time</div><div><h3>Optional massage</h3><span class="tag tbd">Tentative</span></div></div>
+</div></div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 21</div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Marrakech → Fes</span>
-        <span class="stop-time">2:10 – 3:15 PM</span>
-      </div>
-      <p class="stop-blurb">Ryanair FR 6731 · booking TU9K3Y · corrected from the original 6:20 AM departure</p>
-    </div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Dar Othmane, Fes Medina</span>
-        <span class="stop-time">Check-in 2:00 PM</span>
-      </div>
-      <p class="stop-blurb">Arrival now lines up with check-in — lodging gap resolved</p>
-    </div>
-  </div>
+<details class="card day">
+<summary><div class="summary-main"><span class="date"><b>21</b>Wed</span><span>Marrakech → Fes</span></div><span class="chev">⌄</span></summary>
+<div class="body">
+<div class="timeline">
+<div class="event"><div class="time">Morning</div><div><h3>Breakfast + checkout</h3><div class="meta">We check out of the Marrakech riad by 12:00 PM.</div></div></div>
+<div class="event"><div class="time">2:10 PM</div><div><h3>Ryanair FR 6731 — Marrakech → Fes</h3><div class="meta">Arrive 3:15 PM · 1h 05m nonstop · TU9K3Y</div><div class="tags"><span class="tag ok">Booked</span></div></div></div>
+</div>
+<details class="subdetails"><summary><span>🏠 Fes accommodation & check-in</span><span>⌄</span></summary>
+<div class="subbody"><div class="kv">
+<div class="k">Property</div><div>Dar Othmane in Fes Medina</div>
+<div class="k">Address</div><div>76 Rue Talaa Kebira, Farrane Couicha, Chrabliyine, Fes, Fez‑Meknès, Morocco</div>
+<div class="k">Check-in</div><div>Oct 21 from 2:00 PM</div>
+<div class="k">Checkout</div><div>Oct 23 by 12:00 PM</div>
+<div class="k">Guests</div><div>5</div>
+<div class="k">Host</div><div>Hicham</div>
+<div class="k">Confirmation</div><div>HMP9SD9XYX</div>
+<div class="k">Access note</div><div>About 3 minutes from Ain Azliten parking/taxis, with immediate access to Talaa Kebira.</div>
+</div><div class="note">The exact check-in procedure is not in our saved details. Airbnb says to contact Hicham for check-in instructions, so we should message him before arrival.</div></div>
+</details>
+</div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 22</div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Fes exploring</span>
-        <span class="stop-time">Full day</span>
-      </div>
-      <p class="stop-blurb">Medina, tanneries, and more</p>
-    </div>
-  </div>
+<details class="card day" open>
+<summary><div class="summary-main"><span class="date"><b>22</b>Thu</span><span>Fes — Medina guided tour</span></div><span class="chev">⌄</span></summary>
+<div class="body">
+<div class="timeline">
+<div class="event"><div class="time">10:00–1:30</div><div>
+<h3>Medina Guided Tour with Fes Local</h3>
+<div class="meta">Our group of 5 · meet at Dar Sunrise Fes, House No. 10, in the alley off Talaa Kebira between Made in M Café and El Forno Restaurant.</div>
+<div class="tags"><span class="tag ok">Booked</span><span class="tag">~3½ hours</span></div>
+<div class="meta" style="margin-top:8px">The route includes Bab Boujloud, Dar al‑Magana water clock, Bou Inania Medersa, Talaa Kebira, Nejjarine, souks, Al‑Qarawiyyin and Chouara Tannery.</div>
+<div class="links">
+<a class="btn" target="_blank" rel="noopener" href="https://www.airbnb.com/l/rl2fHQKW?s=67&unique_share_id=579a5d86-f260-4f3f-9e0f-cce139ab4c53">Airbnb tour</a>
+<a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/CKtaLor7ZzVXB1rz6?g_st=ipc">Meeting point</a>
+<a class="btn" target="_blank" rel="noopener" href="https://youtu.be/sKO18JEWy_4">Walk from Blue Gate</a>
+<a class="btn" target="_blank" rel="noopener" href="https://youtu.be/2D_0fCHUIoc">Walk from Ain Azliten</a>
+</div>
+</div></div>
+</div>
+<div class="note good"><b>For Ammi:</b> we approach from Parking Ain Azliten. The guide says it is about a 1-minute uphill walk from there, compared with about 3 minutes downhill from Bab Boujloud.</div>
+<div class="note"><b>Guide WhatsApp:</b> +212 697 270 226</div>
+</div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 23</div>
-    <div class="stop">
-      <span class="flag">Open</span>
-      <div class="stop-top">
-        <span class="stop-name">Chefchaouen stop</span>
-        <span class="stop-time">En route</span>
-      </div>
-      <p class="stop-blurb">GetYourGuide transfer vs. Fes host option — still undecided</p>
-    </div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Riad villa, Tangier</span>
-        <span class="stop-time">Check-in 2:00 PM</span>
-      </div>
-      <p class="stop-blurb">Rue Dar Baroud, Old Medina — host meets you and walks you in</p>
-    </div>
-  </div>
+<details class="card day" open>
+<summary><div class="summary-main"><span class="date"><b>23</b>Fri</span><span>Fes → Chefchaouen → Tangier</span></div><span class="chev">⌄</span></summary>
+<div class="body">
+<div class="timeline">
+<div class="event"><div class="time">Morning</div><div><h3>Leave Fes</h3><div class="meta">We still need to finalize our private driver / transfer.</div><span class="tag tbd">TBD</span></div></div>
+<div class="event"><div class="time">Daytime</div><div><h3>Chefchaouen stop</h3><div class="meta">We are planning this as a stop en route rather than an overnight.</div></div></div>
+<div class="event"><div class="time">Afternoon</div><div><h3>Arrive Tangier</h3></div></div>
+</div>
+<details class="subdetails"><summary><span>🏠 Tangier accommodation & check-in</span><span>⌄</span></summary>
+<div class="subbody"><div class="kv">
+<div class="k">Property</div><div>Riad villa with Mediterranean Sea views of Spain</div>
+<div class="k">Address</div><div>Rue Dar Baroud, Tangier, Tangier‑Tétouan‑Al Hoceima, Morocco</div>
+<div class="k">Check-in</div><div>Oct 23 from 2:00 PM</div>
+<div class="k">Checkout</div><div>Oct 24 by 11:00 AM</div>
+<div class="k">Guests</div><div>5</div>
+<div class="k">Host</div><div>Moe · co-host Ahmed</div>
+<div class="k">Check-in method</div><div>Building staff / host-assisted arrival</div>
+<div class="k">Confirmation</div><div>HMR4HB8YKN</div>
+<div class="k">Host directions</div><div>The riad is in Dar Baroud in the Old Medina, on the Markala / sea-road side of the Medina wall.</div>
+</div>
+<div class="note good">The host plans to meet us and walk us into the Medina so we do not get lost. The exact riad location will be sent by WhatsApp.</div>
+<div class="note">The exact pickup point is not yet in our saved details. Wi‑Fi login details should appear about 48 hours before check-in.</div>
+</div>
+</details>
+</div>
+</details>
 
-  <div class="day-block">
-    <div class="day-label">Oct 24</div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Tangier → Madrid</span>
-        <span class="stop-time">11:15 AM</span>
-      </div>
-      <p class="stop-blurb">AA 8589, operated by Iberia · 1h40m connection in Madrid</p>
-    </div>
-    <div class="stop">
-      <div class="stop-top">
-        <span class="stop-name">Madrid → JFK</span>
-        <span class="stop-time">4:20 PM</span>
-      </div>
-      <p class="stop-blurb">AA 8837, operated by Iberia · arrives JFK Terminal 8, 6:55 PM</p>
-    </div>
-  </div>
+<details class="card day">
+<summary><div class="summary-main"><span class="date"><b>24</b>Sat</span><span>Tangier → Madrid → New York</span></div><span class="chev">⌄</span></summary>
+<div class="body"><div class="timeline">
+<div class="event"><div class="time">11:15 AM</div><div><h3>AA 8589 operated by Iberia — Tangier → Madrid</h3><div class="meta">Arrive Madrid Terminal 4S at 2:40 PM · 2h 25m</div></div></div>
+<div class="event"><div class="time">1h 40m</div><div><h3>Madrid connection</h3><div class="meta">Our connection remains in Terminal 4S.</div></div></div>
+<div class="event"><div class="time">4:20 PM</div><div><h3>AA 8837 operated by Iberia — Madrid → JFK</h3><div class="meta">Arrive JFK Terminal 8 at 6:55 PM · UKMNHJ</div></div></div>
+</div></div>
+</details>
 
-  <section class="reference">
-    <h2 class="display">Bookings at a glance</h2>
-    <table class="ref-table">
-      <thead>
-        <tr><th>Item</th><th>Confirmation</th><th>Dates</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>JFK ⇄ RAK / TNG ⇄ JFK</td><td>B2Z8MO / UKMNHJ</td><td>Oct 17 &amp; Oct 24</td></tr>
-        <tr><td>Marrakech → Fes flight</td><td>TU9K3Y</td><td>Oct 21</td></tr>
-        <tr><td>Riad Dar Yamina Exclusif</td><td>HM2MPDP92D</td><td>Oct 17–21</td></tr>
-        <tr><td>Dar Othmane, Fes</td><td>HMP9SD9XYX</td><td>Oct 21–23</td></tr>
-        <tr><td>Riad villa, Tangier</td><td>HMR4HB8YKN</td><td>Oct 23–24</td></tr>
-      </tbody>
-    </table>
+</div>
+</section>
 
-    <div class="budget-total">
-      <span class="label">Total booked so far</span>
-      <span class="amount">$8,122.58</span>
-    </div>
-    <p class="budget-note">Does not include the Chefchaouen transfer, meals, activities, or the Marrakech open days.</p>
-  </section>
+<section id="baggage">
+<div class="section-title"><div><h2>Baggage at a glance</h2><div class="hint">Same layout for each flight so we can compare quickly.</div></div></div>
+<div class="baggage-grid">
+<div class="bag-card"><h3>✈️ New York → Marrakech</h3><div class="meta">Royal Air Maroc · per passenger</div><div class="bag-row"><span>Small personal bag</span><b>Not separately listed</b></div><div class="bag-row"><span>Cabin bag</span><b>1 × 10 kg<br>55 × 40 × 20 cm</b></div><div class="bag-row"><span>Checked bag</span><b>1 × 23 kg included<br>max 203 cm (L+W+H)</b></div></div>
+<div class="bag-card"><h3>✈️ Marrakech → Fes</h3><div class="meta">Ryanair · per passenger</div><div class="bag-row"><span>Small bag</span><b>1 included<br>40 × 30 × 20 cm<br>under the seat</b></div><div class="bag-row"><span>Cabin bag</span><b>1 × 10 kg purchased<br>55 × 40 × 20 cm<br>overhead locker</b></div><div class="bag-row"><span>Checked bag</span><b>None purchased</b></div></div>
+<div class="bag-card"><h3>✈️ Tangier → New York</h3><div class="meta">AA ticket · Iberia operated · per passenger</div><div class="bag-row"><span>Small personal bag</span><b>Not separately listed</b></div><div class="bag-row"><span>Cabin bag</span><b>Up to 10 kg included</b></div><div class="bag-row"><span>Checked bag</span><b>Not included<br>can be added up to 23 kg</b></div></div>
+</div>
+</section>
 
+<section id="todo">
+<div class="section-title"><div><h2>What we still need to do</h2></div></div>
+<div class="todo">
+<div class="mini"><h3>AA / Iberia return</h3><div>Add our passport information and confirm Ammi’s wheelchair assistance for the return flight.</div><div class="statusline">Confirmation: UKMNHJ</div></div>
+<div class="mini"><h3>Ammi outbound</h3><div>Online check-in is complete for the eligible travelers. Ammi still needs airport-counter check-in with Royal Air Maroc.</div></div>
+<div class="mini"><h3>Oct 23 transfer</h3><div>Finalize our Fes → Chefchaouen → Tangier private driver / transfer.</div><div class="tags"><span class="tag tbd">Open</span></div></div>
+<div class="mini"><h3>Accommodation check-ins</h3><div>Confirm late-arrival handoff in Marrakech, exact Fes check-in instructions, and Tangier pickup/WhatsApp location.</div></div>
+</div>
+</section>
+
+<section id="food">
+<div class="section-title"><div><h2>Food ideas</h2></div></div>
+<div class="food-grid">
+<div class="food"><h3>Marrakech · Tanjia Secrets</h3><div class="meta">Tanjia & mint tea</div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/place/Tanjia+secrets/">Map</a></div></div>
+<div class="food"><h3>Marrakech · Banachi Dabachi</h3><div class="meta">Avocado juice</div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Banachi+Dabachi+Marrakech">Map</a></div></div>
+<div class="food"><h3>Marrakech · Stall #71, Jemaa el‑Fnaa</h3><div class="meta">Spiced tea & cake</div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Jemaa+el-Fnaa+Marrakech">Map</a></div></div>
+<div class="food"><h3>Fes · The Ruined Garden</h3><div class="meta">Zara’s recommendation</div><div class="links"><a class="btn" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=The+Ruined+Garden+Fes">Map</a></div></div>
+</div>
+</section>
+
+<section id="notes">
+<div class="section-title"><div><h2>Quick notes</h2></div></div>
+<div class="grid">
+<div class="card half pad"><h3>Casablanca connection</h3><p>We only have 1 hour between flights and we change from Terminal 2 to Terminal 1.</p></div>
+<div class="card half pad"><h3>Ammi’s pace</h3><p>We are building in extra walking time and breaks. In Fes, we use Parking Ain Azliten when practical because it reduces the final walk.</p></div>
+<div class="card half pad"><h3>Sunday in Marrakech</h3><p>Our morning Medina route is walkable. If we add Jardin Majorelle afterward, we take a taxi from the Medina to save energy and time.</p></div>
+<div class="card half pad"><h3>Tangier</h3><p>We need to be in Tangier on Oct 23 because our flight home leaves at 11:15 AM the next morning.</p></div>
+</div>
+</section>
 </main>
-
-<footer>
-  Morocco Trip · Oct 17–24, 2026
-</footer>
-
 </body>
 </html>
